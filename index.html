@@ -112,7 +112,7 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/mustache.js"></script>
 
-        <script type="text/javascript">
+            <script type="text/javascript">
     (function() {
         var $filterBy, $issuesWrap, $reader, $readerFrame,
             currentFilter = 'any';
@@ -126,6 +126,7 @@
                     years.push(y);
                 }
             });
+            console.log('Found levels:', years);
             return years.sort(function(a, b) {
                 var numA = parseInt(a, 10), numB = parseInt(b, 10);
                 if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
@@ -140,6 +141,7 @@
             years.forEach(function(year) {
                 $filterBy.append('<li><a href="#" data-level="' + year + '">' + year + '</a></li>');
             });
+            console.log('Filters rendered:', years.length + (hasUnknown ? 1 : 0), 'options');
         }
 
         function filterBooks(level) {
