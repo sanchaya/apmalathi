@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://apmalathi.sanchaya.net/sitemap.xml
